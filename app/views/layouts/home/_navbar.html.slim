@@ -1,0 +1,39 @@
+nav.navbar.navbar-expand-md.navbar-dark.bg-dark
+  .navbar-collapse.collapse.w-100.order-1.order-md-0.dual-collapse2
+    ul.navbar-nav.mr-auto
+      li.nav-item.active
+				= link_to "Leboncoin", root_path, class: "nav-link"
+      li.nav-item
+				button.btn.btn-warning
+					i.fas.fa-plus-square
+					| &nbsp
+					| Déposer une annonce
+      li.nav-item
+				a.nav-link href="#"
+					i.fa.fa-search
+					| &nbsp
+					| Rechercher
+					span.sr-only (current)
+  .navbar-collapse.collapse.w-100.order-3.dual-collapse2
+    ul.navbar-nav.ml-auto
+			li.nav-item
+				a.nav-link href="#"
+					i.fa.fa-bell
+					| &nbsp
+					| Mes recherches
+					span.sr-only (current)
+			li.nav-item
+				a.nav-link href="#"
+					i.fa.fa-bookmark
+					| &nbsp
+					| Favoris
+					span.sr-only (current)
+			li.nav-item
+				a.nav-link href="#"
+					i.fas.fa-envelope
+					| &nbsp
+					| Messages
+					span.sr-only (current)
+			li.nav-item
+				a.btn.btn-light href="#" Se connecter
+br
