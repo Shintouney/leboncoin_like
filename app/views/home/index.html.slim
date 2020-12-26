@@ -5,6 +5,55 @@
        tout est à portée de main !
     p
       | Trouvez la bonne affaire parmi les millions de petites annonces leboncoin
+.row
+  .col-sm-4.col-sm-offset-2.mb-3
+    .btn-group
+      button.btn.btn-secondary type="button" Catégories
+      button.btn.btn-secondary.dropdown-toggle data-submenu="" data-toggle="dropdown" type="button"
+      .dropdown-menu
+        .dropdown.dropright.dropdown-submenu
+          button.dropdown-item.dropdown-toggle data-toggle="dropdown" type="button" Action
+          .dropdown-menu
+            button.dropdown-item type="button" Sub action
+            .dropdown.dropright.dropdown-submenu
+              button.dropdown-item.dropdown-toggle type="button" Another sub action
+              .dropdown-menu
+                button.dropdown-item type="button" Sub action
+                button.dropdown-item type="button" Another sub action
+                button.dropdown-item type="button" Something else here
+            button.dropdown-item type="button" Something else here
+            button.dropdown-item disabled="" type="button" Disabled action
+            .dropdown.dropright.dropdown-submenu
+              button.dropdown-item.dropdown-toggle type="button" Another action
+              .dropdown-menu
+                button.dropdown-item type="button" Sub action
+                button.dropdown-item type="button" Another sub action
+                button.dropdown-item type="button" Something else here
+ul.nav.nav-pills
+  li.nav-item
+    a.nav-link.active tabindex="0"  Regular link
+  li.nav-item.dropdown
+    a.nav-link.dropdown-toggle data-submenu="" data-toggle="dropdown" tabindex="0"
+      | Dropdown
+    .dropdown-menu
+      .dropdown.dropright.dropdown-sumenu
+        button.dropdown-item.dropdown-toggle data-toggle="dropdown" type="button"  Action
+        .dropdown-menu
+          button.dropdown-item type="button"  Sub action
+          .dropdown.dropright.dropdown-submenu
+            button.dropdown-item.dropdown-toggle type="button"  Another sub action
+            .dropdown-menu
+              button.dropdown-item type="button"  Sub action
+              button.dropdown-item type="button"  Another sub action
+              button.dropdown-item type="button"  Something else here
+          button.dropdown-item type="button"  Something else here
+          button.dropdown-item disabled="" type="button"  Disabled action
+          .dropdown.dropright.dropdown-submenu
+            button.dropdown-item.dropdown-toggle type="button"  Another action
+            .dropdown-menu
+              button.dropdown-item type="button"  Sub action
+              button.dropdown-item type="button"  Another sub action
+              button.dropdown-item type="button"  Something else here
 
 .container
 	.card.text-center
@@ -13,40 +62,6 @@
 				li.nav-item
 					a.nav-link.active href="#"  Offres
 				li.nav-item
-					a.nav-link href="#" Demande
+					a.nav-link id="lol" href="#" Demande
 		.card-body
-			p
-				| D
-			li.dropdown
-				a.dropdown-toggle aria-expanded="true" aria-haspopup="true" data-toggle="dropdown" href="#" role="button"
-					span.nav-label Services
-					span.caret
-				ul.dropdown-menu
-					li
-						a href="#"  Service A
-					li
-						a href="#"  Service B
-					li.dropdown-submenu
-						a.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button"
-							span.nav-label Service C
-							span.caret
-						ul.dropdown-menu
-							li
-								a href="#"  Service C1
-							li
-								a href="#"  Service C2
-							li
-								a href="#"  Service C3
-							li
-								a href="#"  Service C4
-							li
-								a href="#"  Service C5
-			br
-			.dropdown
-				button#dropdownMenuButton.btn.btn-secondary.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" type="button"
-					| Dropdown button
-				.dropdown-menu aria-labelledby="dropdownMenuButton"
-					a.dropdown-item href="#"  Action
-					a.dropdown-item href="#"  Another action
-					a.dropdown-item href="#"  Something else here
 			a.btn.btn-primary href="#" Rechercher (2 résultat)
