@@ -1,46 +1,56 @@
 .container
-  .card-deck.mb-3.text-center
-    h4
-      | Avec la livraison chez vous en point relais
-       tout est à portée de main !
-    p
-      | Trouvez la bonne affaire parmi les millions de petites annonces leboncoin
+	.card-deck.mb-3.text-center
+		h4
+			| Avec la livraison chez vous en point relais
+			 tout est à portée de main !
+		p
+			| Trouvez la bonne affaire parmi les millions de petites annonces leboncoin
 
 .container
-  .card.text-center
-    .card-header
-      ul.nav.nav-tabs.card-header-tabs
-        li.nav-item
-          a.nav-link.active href="#"  Offres
-        li.nav-item
-          a.nav-link id="lol" href="#" Demande
-    .card-body
-      .row
-        .col-sm-4.col-sm-offset-2.mb-3
-          .btn-group
-            button.btn.btn-warning
-              i.fas.fa-list
-              | &nbsp
-              | Catégories
-            button.btn.btn-secondary.dropdown-toggle data-submenu="" data-toggle="dropdown" type="button"
-            .dropdown-menu
-              .dropdown.dropright.dropdown-submenu
-                button.dropdown-item.dropdown-toggle data-toggle="dropdown" type="button" Action
-                .dropdown-menu
-                  button.dropdown-item type="button" Sub action
-                  .dropdown.dropright.dropdown-submenu
-                    button.dropdown-item.dropdown-toggle type="button" Another sub action
-                    .dropdown-menu
-                      button.dropdown-item type="button" Sub action
-                      button.dropdown-item type="button" Another sub action
-                      button.dropdown-item type="button" Something else here
-                  button.dropdown-item type="button" Something else here
-                  button.dropdown-item disabled="" type="button" Disabled action
-                  .dropdown.dropright.dropdown-submenu
-                    button.dropdown-item.dropdown-toggle type="button" Another action
-                    .dropdown-menu
-                      button.dropdown-item type="button" Sub action
-                      button.dropdown-item type="button" Another sub action
-                      button.dropdown-item type="button" Something else here
-      a.btn.btn-primary href="#" Rechercher (2 résultat)
-      a.btn
+	.card.text-center
+		.card-header
+			ul.nav.nav-tabs.card-header-tabs
+				li.nav-item
+					a.nav-link.active href="#"	Offres
+				li.nav-item
+					a.nav-link id="lol" href="#" Demande
+		.card-body
+			nav.navbar.navbar-light.bg-light.navbar-expand-sm.mb-3
+				button.navbar-toggler data-target=".navbar-collapse" data-toggle="collapse" type="button"
+					span.navbar-toggler-icon
+				.collapse.navbar-collapse
+					ul.navbar-nav.mr-auto
+						li.nav-item.dropdown
+							a.nav-link.dropdown-toggle data-submenu="" data-toggle="dropdown" tabindex="0"
+								i.fas.fa-list
+								| &nbsp
+								| Catégories
+							.dropdown-menu
+								.dropdown.dropright.dropdown-submenu
+									button.dropdown-item.dropdown-toggle data-toggle="dropdown" type="button"  Action
+									.dropdown-menu
+										button.dropdown-item type="button"	Sub action
+										.dropdown.dropright.dropdown-submenu
+											button.dropdown-item.dropdown-toggle type="button"	Another sub action
+											.dropdown-menu
+												button.dropdown-item type="button"	Sub action
+												button.dropdown-item type="button"	Another sub action
+												button.dropdown-item type="button"	Something else here
+										button.dropdown-item type="button"	Something else here
+										button.dropdown-item disabled="" type="button"	Disabled action
+										.dropdown.dropright.dropdown-submenu
+											button.dropdown-item.dropdown-toggle type="button"	Another action
+											.dropdown-menu
+												button.dropdown-item type="button"	Sub action
+												button.dropdown-item type="button"	Another sub action
+												button.dropdown-item type="button"	Something else here
+				| &nbsp
+				| &nbsp
+				i.fas.fa-search
+				| &nbsp
+				input.form-control aria-describedby="basic-addon1" aria-label="Username" placeholder="Que recherchez-vous ?" type="text" /
+				| &nbsp
+				i.fas.fa-map-marker
+				| &nbsp
+				input.form-control aria-describedby="basic-addon1" aria-label="Username" placeholder="Saisissez une ville et un rayon" type="text" /
+			a.btn.btn-primary href="#" Rechercher (2 résultat)
