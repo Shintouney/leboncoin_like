@@ -1,0 +1,17 @@
+.container
+  .card.text-center
+    .card-header
+      ul.nav.nav-tabs.card-header-tabs
+        li.nav-item
+          a.nav-link.active href="#" Connexion
+        li.nav-item
+          a.nav-link href="#" Inscription
+    .card-body
+      .form-group
+        = form_for(resource, as: resource_name, url: session_path(resource_name), default: { input_html:  { class: "form-control" }}) do |f|
+          .field
+            = f.email_field :email, class: "form-control", placeholder: "Votre adresse email"
+            = f.password_field :password, autocomplete: "current-password", autofocus: true, class: "form-control"
+          .action
+            br
+            = f.submit "Log in", class: "btn btn-primary"

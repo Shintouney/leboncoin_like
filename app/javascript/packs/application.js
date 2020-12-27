@@ -11,12 +11,8 @@ import "bootstrap-submenu";
 $( document  ).on('turbolinks:load', function() {
   $('[data-submenu]').submenupicker();
 })
-jQuery.noConflict()(function ($) { // this was missing for me
+jQuery.noConflict()(function ($) {
   $(document).ready(function() {
     $('[data-submenu]').submenupicker();
   });
 });
-$(window).on('beforeunload', function(){
-  $('[data-submenu]').submenupicker();
-});
-console.log('Hello from application.js')
