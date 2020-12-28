@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root "home#index"
   resource :home, only: [:index]
   namespace :account do
-    resources :profile
+    resources :profile, only: [:index]
   end
   devise_for :users,
     :controllers => {:registrations => "registrations"}

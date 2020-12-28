@@ -1,17 +1,47 @@
 .container
-  br
-  .card
-    .card-body
-      .card-title
-        a.content
-          span.iwt
-            i.fas.fa-user
-            span
-              = current_user.username
-  .card
-    .card-body
-      .card-title
-        a.content
-          = link_to 'Deconnexion',
-            destroy_user_session_path,
-            method: :delete
+	br
+	.card
+		.card-body
+			.card-title
+				a.content
+					span.iwt
+						i.fas.fa-user
+						span
+							= current_user.username
+	.card
+		.card-body
+			.card-title
+				h4 Photo de profil
+				button.btn.btn-warning
+					i.fas.fa-plus-square
+					| &nbsp
+					| Ajouter ma photo de profile
+	.row
+		.col-sm-6
+			.card
+				.card-body
+					.card-title
+						a.content
+							i.fas.fa-scroll
+							| &nbsp
+							= link_to 'Mes annonces',
+								destroy_user_session_path,
+								method: :delete
+		.col-sm-6
+			.card
+				.card-body
+					.card-title
+						a.content
+							i.fas.fa-toolbox
+							| &nbsp
+							= link_to 'Paramètres',
+								destroy_user_session_path,
+								method: :delete
+	br
+	.card
+		.card-body
+			.card-title
+				a.content
+					= link_to 'Deconnexion',
+						destroy_user_session_path,
+						method: :delete
