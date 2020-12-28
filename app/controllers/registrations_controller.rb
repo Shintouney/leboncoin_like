@@ -1,5 +1,6 @@
 class RegistrationsController < Devise::RegistrationsController
   layout "home"
+
   def new
     super
   end
@@ -28,5 +29,11 @@ class RegistrationsController < Devise::RegistrationsController
 
   def update
     super
+  end
+
+  private
+
+  def sign_up_params
+    params.require(:user).permit(:email, :username, :password, :password_confirmation)
   end
 end

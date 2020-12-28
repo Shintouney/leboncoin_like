@@ -11,6 +11,10 @@
         = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), default: { input_html:  { class: "form-control" }}) do |f|
           .form-inputs
             label
+            | Nom d'utilisateur
+            = f.input :username, required: true, class: "form-control", placeholder: "Votre nom d'utilisateur", label: false, error: false
+            br
+            label
             | E-mail
             = f.input :email, required: true, class: "form-control", placeholder: "Votre adresse email", label: false, error: false
             br

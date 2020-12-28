@@ -1,0 +1,17 @@
+.container
+  br
+  .card
+    .card-body
+      .card-title
+        a.content
+          span.iwt
+            i.fas.fa-user
+            span
+              = current_user.username
+  .card
+    .card-body
+      .card-title
+        a.content
+          = link_to 'Deconnexion',
+            destroy_user_session_path,
+            method: :delete
