@@ -10,6 +10,9 @@ module Inc
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
+    config.to_prepare do
+      Devise::SessionsController.layout "home_unlogged"
+    end
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
