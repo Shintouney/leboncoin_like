@@ -1,0 +1,5 @@
+Category > Item
+
+Item:
+  position: coordonate
+  category_id: Category_1
