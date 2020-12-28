@@ -1,0 +1,19 @@
+.container
+  .card.text-center
+    .card-header
+      ul.nav.nav-tabs.card-header-tabs
+        li.nav-item
+          a.nav-link.active Création d'une annonce
+    .card-body
+      - if user_signed_in?
+        = simple_form_for @offer, url: account_offer_index_path do |f|
+          = f.input :title
+          = f.button :submit, "Créer votre annonce", class: "btn btn-info"
+      - else
+        h4
+          | Bonjour !
+        p
+          | Connectez-vous ou créez un compte pour déposer votre annonce
+        = link_to "Se connecter", new_user_session_path, class: "btn btn-warning"
+        | &nbsp
+        = link_to "Créer un compte", new_user_registration_path, class: "btn btn-warning"

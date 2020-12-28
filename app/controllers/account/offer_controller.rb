@@ -1,8 +1,10 @@
 class Account::OfferController < AccountController
 
-  def index
+  def new
+    @offer = Offer.new
   end
 
   def create
+    raise
   end
 end
