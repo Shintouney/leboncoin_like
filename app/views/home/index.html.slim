@@ -39,14 +39,11 @@
         | &nbsp
         i.fas.fa-search
         | &nbsp
-        input.form-control aria-describedby="basic-addon1" aria-label="Username" placeholder="Que recherchez-vous ?" type="text" /
+        input.form-control aria-describedby="basic-addon1" aria-label="Username" placeholder="Que recherchez-vous ?" type="text"
         | &nbsp
         i.fas.fa-map-marker
         | &nbsp
-        input.form-control aria-describedby="basic-addon1" aria-label="Username" placeholder="Saisissez une ville et un rayon" type="text" /
+        input.form-control aria-describedby="basic-addon1" aria-label="Username" placeholder="Saisissez une ville et un rayon" type="text"
       = simple_form_for :search, url: home_index_path do |f|
         = f.hidden_field :category
         = f.button :submit, "Rechercher (2 résultat)", class: "btn btn-primary"
-      - if user_signed_in?
-        p
-          | lol

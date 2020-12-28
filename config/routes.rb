@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :home
   namespace :account do
     resources :profile, only: [:index]
+    resources :offer
   end
   devise_for :users,
     :controllers => {:registrations => "registrations"}
