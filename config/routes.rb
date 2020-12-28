@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root "home#index"
-  resource :home, only: [:index]
+  resources :home
   namespace :account do
     resources :profile, only: [:index]
   end

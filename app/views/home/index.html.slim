@@ -71,7 +71,9 @@
         i.fas.fa-map-marker
         | &nbsp
         input.form-control aria-describedby="basic-addon1" aria-label="Username" placeholder="Saisissez une ville et un rayon" type="text" /
-      a.btn.btn-primary href="#" Rechercher (2 résultat)
+      = simple_form_for :search, url: home_index_path do |f|
+        = f.hidden_field :category
+        = f.button :submit, class: "btn btn-primary", value: "Rechercher (2 résultat)"
       - if user_signed_in?
         p
           | lol

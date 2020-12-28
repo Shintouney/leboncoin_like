@@ -5,6 +5,10 @@ class HomeController < ApplicationController
   def index
   end
 
+  def create
+    raise
+  end
+
   private
 
   def determine_layout

@@ -19,6 +19,7 @@ $( document  ).on('turbolinks:load', function() {
 				const array = document.getElementById("main-field-dropdown").innerHTML.split("&nbsp;");
 				original_array.push(array[0], "&nbsp;", event.target.innerText);
 				document.getElementById("main-field-dropdown").innerHTML = original_array.join("");
+        document.getElementById("search_category").value = event.target.innerText
 			});
 		});
 	});
