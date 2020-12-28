@@ -7,6 +7,7 @@ class HomeController < ApplicationController
   end
 
   def create
+    raise
   end
 
   private
