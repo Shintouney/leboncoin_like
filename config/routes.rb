@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   resource :home, only: [:index]
   devise_for :users,
     :controllers => {:registrations => "registrations"}
+  match '/users', to: 'home#index', via: :all
 end
