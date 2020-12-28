@@ -15,41 +15,6 @@
         li.nav-item
           a.nav-link id="lol" href="#" Demande
     .card-body
-      .dropdown
-				.col-sm-4.col-sm-offset-2.mb-3
-					.dropdown44
-						button.btn.btn-secondary.dropdown-toggle data-submenu="" data-toggle="dropdown" type="button"
-							| Dropdown
-						.dropdown-menu
-							.dropdown.dropright.dropdown-submenu
-								button.dropdown-item.dropdown-toggle data-toggle="dropdown" type="button"  Action
-								.dropdown-menu
-									button.dropdown-item type="button"  Sub action
-									.dropdown.dropright.dropdown-submenu
-										button.dropdown-item.dropdown-toggle type="button"  Another sub action
-										.dropdown-menu
-											button.dropdown-item type="button"  Sub action
-											button.dropdown-item type="button"  Another sub action
-											button.dropdown-item type="button"  Something else here
-									button.dropdown-item type="button"  Something else here
-									button.dropdown-item disabled="" type="button"  Disabled action
-									.dropdown.dropright.dropdown-submenu
-										button.dropdown-item.dropdown-toggle type="button"  Another action
-										.dropdown-menu
-											button.dropdown-item type="button"  Sub action
-											button.dropdown-item type="button"  Another sub action
-											button.dropdown-item type="button"  Something else here
-							.dropdown-header Dropdown header
-							.dropdown.dropright.dropdown-submenu
-								button.dropdown-item.dropdown-toggle type="button"  Another action
-								.dropdown-menu
-									button.dropdown-item type="button"  Sub action
-									button.dropdown-item type="button"  Another sub action
-									button.dropdown-item type="button"  Something else here
-							button.dropdown-item type="button"  Something else here
-							.dropdown-divider
-							button.dropdown-item type="button"  Separated link
-
       nav.navbar.navbar-light.bg-light.navbar-expand-sm.mb-3
         button.navbar-toggler data-target=".navbar-collapse" data-toggle="collapse" type="button"
           span.navbar-toggler-icon
@@ -60,29 +25,16 @@
                 i.fas.fa-list
                 | &nbsp
                 | Catégories
-              .dropdown-menu
-                .dropdown.dropright.dropdown-submenu id="dropdown-toggle"
-                  - @categories.each do |category|
-                    button.dropdown-item.dropdown-toggle data-toggle="dropdown" type="button"
+              .dropdown-menu id="dropdown-toggle"
+                - @categories.each do |category|
+                  .dropdown.dropright.dropdown-submenu
+                    button.dropdown-item.dropdown-toggle
                       = category.name
-                  button.dropdown-item.dropdown-toggle data-toggle="dropdown" type="button" Toutes les catégories
-                  .dropdown-menu
-                    button.dropdown-item type="button" Sub action
-                    .dropdown.dropright.dropdown-submenu
-                      button.dropdown-item.dropdown-toggle type="button" Another sub action
-                      .dropdown-menu
-                        button.dropdown-item type="button" Sub action
-                        button.dropdown-item type="button" Another sub action
-                        button.dropdown-item type="button" Something else here
-                    button.dropdown-item type="button" Something else here
-                    button.dropdown-item disabled="" type="button" Disabled action
-                    .dropdown.dropright.dropdown-submenu
-                      button.dropdown-item.dropdown-toggle type="button" Another action
-                      .dropdown-menu
-                        button.dropdown-item type="button" Sub action
-                        button.dropdown-item type="button" Another sub action
-                        button.dropdown-item type="button" Something else here
-                  button.dropdown-item.dropdown-toggle data-toggle="dropdowndd" type="button" Immobilier
+                    .dropdown-menu
+                      - category.subcategories.each do |sub_category|
+                        button.dropdown-item type="button"
+                          = sub_category.name
+                  .dropdown.dropright.dropdown-submenu id="dropdown-toggle"
         | &nbsp
         | &nbsp
         i.fas.fa-search
