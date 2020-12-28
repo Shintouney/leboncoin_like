@@ -3,9 +3,9 @@
     .card-header
       ul.nav.nav-tabs.card-header-tabs
         li.nav-item
-          a.nav-link.active href="#" Connexion
+          = link_to "Connexion", new_user_session_path, class: "nav-link active"
         li.nav-item
-          a.nav-link href="#" Inscription
+          = link_to "Inscription", new_user_registration_path, class: "nav-link"
     .card-body
       .form-group
         = form_for(resource, as: resource_name, url: session_path(resource_name), default: { input_html:  { class: "form-control" }}) do |f|
@@ -14,4 +14,4 @@
             = f.password_field :password, autocomplete: "current-password", autofocus: true, class: "form-control"
           .action
             br
-            = f.submit "Log in", class: "btn btn-primary"
+            = f.submit "Connexion", class: "btn btn-primary"

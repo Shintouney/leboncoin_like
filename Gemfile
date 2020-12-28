@@ -18,6 +18,7 @@ gem 'rails-i18n'
 gem 'simple_form'
 gem 'devise'
 gem 'awesome_print'
+gem 'devise-i18n'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

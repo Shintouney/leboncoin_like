@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :users
   root "home#index"
   resource :home, only: [:index]
+  devise_for :users,
+    :controllers => {:registrations => "registrations"}
 end
