@@ -1,28 +1,50 @@
 .container
-	.card.text-center
-		.card-header
-			ul.nav.nav-tabs.card-header-tabs
-				li.nav-item
-					a.nav-link.active Création d'une annonce
-		.card-body
-			- if user_signed_in?
-				= simple_form_for @offer_form, url: account_offer_index_path do |f|
-					p
-						| Titre
-					= f.input :title, label: false
-					br
-					p
-						| Prix
-					= f.input :price, label: false
-					br
-					p
-						| Description
-					= f.input :description, as: :text, label: false
-					= f.button :submit, "Créer votre annonce", class: "btn btn-info"
+  .card.text-center
+    .card-header
+      ul.nav.nav-tabs.card-header-tabs
+        li.nav-item
+          a.nav-link.active Création d'une annonce
+    .card-body
+      - if user_signed_in?
+        = simple_form_for @offer_form, url: account_offer_index_path do |f|
+          p
+            | Titre
+          = f.input :title, label: false
+          br
+          p
+            | Prix
+          = f.input :price, label: false
+          br
+          p
+            | Description
+          = f.input :description, as: :text, label: false
+          p
+            | Categorie
+          nav.navbar.navbar-light.bg-light.navbar-expand-sm.mb-3
+            button.navbar-toggler data-target="navbar-collapse" data-toggle="collapse" type="button"
+              span.navbar-toggler-icon
+            .collapse.navbar-collapse
+              ul.navbar-nav.mr-auto
+                li.nav-item.dropdown
+                  a.nav-link.dropdown-toggle id="main-field-dropdown" data-submenu="" data-toggle="dropdown"
+                    i.fas.fa-list
+                    | &nbsp
+                    | Catégories
+                  .dropdown-menu id="dropdown-toggle"
+                    - Category.where(parent_id: nil).each do |category|
+                      .dropdown.dropright.dropdown-submenu
+                        a.dropdown-item.dropdown-toggle
+                          = category.name
+                        .dropdown-menu
+                          - category.subcategories.each do |sub_category|
+                            a.dropdown-item
+                              = sub_category.name
+                      .dropdown.dropright.dropdown-submenu id="dropdown-toggle"
+          = f.button :submit, "Créer votre annonce", class: "btn btn-info", disable_with: "Submitting..."
 
-			- else
-				h4
-					| Bonjour !
-				p
-					| Connectez-vous ou créez un compte pour déposer votre annonce
-				= link_to "Se connecter", new_user_session_path, class: "btn btn-warning"
+      - else
+        h4
+          | Bonjour !
+        p
+          | Connectez-vous ou créez un compte pour déposer votre annonce
+        = link_to "Se connecter", new_user_session_path, class: "btn btn-warning"

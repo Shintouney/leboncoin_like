@@ -9,12 +9,10 @@ class Account::OfferController < AccountController
   end
 
   def create
-    if @offer_form.validate(offer_params)
-      raise
+    if form_validate
       @offer_form.save
       redirect_to root_path
     else
-      raise
       render :new
     end
   end
@@ -28,5 +26,9 @@ class Account::OfferController < AccountController
 
   def offer_params
     params.require(:offer).permit(:title, :price, :description)
+  end
+
+  def form_validate
+    @offer_form.validate(offer_params)
   end
 end
