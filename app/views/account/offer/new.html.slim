@@ -6,8 +6,10 @@
           a.nav-link.active Création d'une annonce
     .card-body
       - if user_signed_in?
-        = simple_form_for @offer, url: account_offer_index_path do |f|
-          = f.input :title
+        = simple_form_for @offer_form, url: account_offer_index_path do |f|
+          = f.input :title, label: "Titre"
+          = f.input :price, label: "Prix"
+          = f.input :description, label: "Description"
           = f.button :submit, "Créer votre annonce", class: "btn btn-info"
       - else
         h4
@@ -15,5 +17,3 @@
         p
           | Connectez-vous ou créez un compte pour déposer votre annonce
         = link_to "Se connecter", new_user_session_path, class: "btn btn-warning"
-        | &nbsp
-        = link_to "Créer un compte", new_user_registration_path, class: "btn btn-warning"
