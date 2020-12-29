@@ -5,5 +5,6 @@ class OfferForm < Reform::Form
   property :description, validates: { presence: true, allow_blank: false }
   property :user_id, validates: { presence: true }
   property :category_id, validates: { presence: true }
+  property :category
 
 end
