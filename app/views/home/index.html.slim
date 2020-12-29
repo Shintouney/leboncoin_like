@@ -45,5 +45,5 @@
         | &nbsp
         input.form-control aria-describedby="basic-addon1" aria-label="Username" placeholder="Saisissez une ville et un rayon" type="text"
       = simple_form_for :search, url: home_index_path do |f|
-        = f.hidden_field :category
+        = f.hidden_field :category, input_html: { id: "category_id" }
         = f.button :submit, "Rechercher (2 résultat)", class: "btn btn-primary"
