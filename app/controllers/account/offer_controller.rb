@@ -10,7 +10,6 @@ class Account::OfferController < AccountController
 
   def create
     if form_validate
-      @offer_form.validate_form
       @offer_form.save
       redirect_to root_path
     else
