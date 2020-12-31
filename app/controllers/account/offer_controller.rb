@@ -1,12 +1,12 @@
 class Account::OfferController < AccountController
   before_action :offer_form, only: [:new, :create]
+  before_action :load_offer, only: [:edit, :show, :update]
 
   def index
     redirect_to root_path
   end
 
   def show
-    @offer = Offer.find_by_id(params[:id])
   end
 
   def new
@@ -18,10 +18,9 @@ class Account::OfferController < AccountController
   end
 
   def update
-    @offer = Offer.find_by_id(params[:id])
     @offer_form ||= @offer_form = OfferForm.new(@offer)
     if form_validate
-      @offer_form.save
+      @offer.update(offer_params_update)
       flash[:success] = 'Votre annonce a bien été mis à jour'
       redirect_to account_offer_path(@offer_form.id)
     else
@@ -56,12 +55,22 @@ class Account::OfferController < AccountController
     @offer_form ||= OfferForm.new(offer)
   end
 
+  def offer_params_update
+    param = params.require(:offer).permit(:title, :price, :description, :category_id, :cover_picture)
+    param[:category_id] = @offer_form.category_id
+    param
+  end
+
   def offer_params
     params.require(:offer).permit(:title, :price, :description, :category_id, :cover_picture)
   end
 
   def form_validate
     @offer_form.validate offer_params
+  end
+
+  def load_offer
+    @offer = Offer.find_by_id(params[:id])
   end
 
 end

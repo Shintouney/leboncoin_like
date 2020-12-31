@@ -1,4 +1,12 @@
 fr:
+  activerecord:
+    errors:
+      models:
+        offer:
+          attributes:
+            cover_picture:
+              allowed_file_content_types: "n'est pas conforme"
+              file_size_is_less_than: "est trop volumineuse"
   activemodel:
     attributes:
       offer_form:

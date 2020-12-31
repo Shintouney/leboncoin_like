@@ -15,6 +15,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'decent_exposure'
 gem 'rails-i18n'
+gem 'file_validators'
 gem 'simple_form'
 gem 'devise'
 gem 'awesome_print'

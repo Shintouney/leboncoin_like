@@ -5,7 +5,10 @@ class OfferForm < ReformForm
   property :description, validates: { presence: true, allow_blank: false }
   property :user_id, validates: { presence: true }
   property :category_id, validates: { presence: true, allow_blank: false }
-  property :cover_picture, validates: { presence: true }
+  property :cover_picture
+
+  validates :cover_picture, presence: true, file_size: {less_than: 2.megabytes},
+    file_content_type: {allow: ['image/jpeg', 'image/png', 'image/gif']}
 
   def validate params
     super
@@ -26,7 +29,6 @@ class OfferForm < ReformForm
       return true
     else
       errors.add(:category, "Catégorie invalide")
-raise
       return false
     end
   end
