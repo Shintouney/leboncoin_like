@@ -1,0 +1,65 @@
+- if @offer.nil?
+  .container
+    br
+    .card
+      .card-body
+        .card-title
+          p.content
+            | Nous n'avons pas pu trouver votre annonce
+- else
+  .container
+    br
+    .card
+      .card-body
+        .card-title
+          p.content
+            = "Titre: #{@offer.title}"
+    br
+    .card
+      .card-body
+        .card-title
+        - if @offer.cover_picture.present?
+          p.content
+            = link_to image_tag(@offer.cover_picture, style: "height:200px;width:400px"), url_for(@offer.cover_picture)
+    .card
+      .card-body
+        .card-title
+          p.content
+            | Description
+          p
+            = @offer.description
+    .row
+      .col-sm-6
+        .card
+          .card-body
+            .card-title
+              p.content
+                i.fas.fa-tag
+                | &nbsp
+                | Prix:
+                | &nbsp
+                = @offer.price
+                | &nbsp
+                | euros
+      - if current_user
+        .col-sm-6
+          .card
+            .card-body
+              .card-title
+                a.content
+                  i.fas.fa-trash-alt
+                  | &nbsp
+                  = link_to 'Supprimer l\'annonce',
+                    account_offer_path(id: @offer.id),
+                    method: :delete,
+                    data: { confirm: 'Etes vous sure?'  }
+    - if current_user
+      .row
+        .col-sm-6
+          .card-body
+            .cart-title
+              a.content
+                i.fas.fa-edit
+                | &nbsp
+                = link_to 'Editer l\'annonce',
+                  edit_account_offer_path(id: @offer.id)

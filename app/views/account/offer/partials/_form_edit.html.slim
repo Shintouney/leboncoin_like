@@ -1,15 +1,4 @@
-= simple_form_for @offer_form, url: account_offer_index_path do |f|
-  p
-    | Titre
-  = f.input :title, label: false, error: false
-  br
-  p
-    | Prix
-  = f.input :price, label: false, error: false
-  br
-  p
-    | Description
-  = f.input :description, as: :text, label: false, error: false
+= simple_form_for @offer_form, url: account_offer_path do |f|
   p
     | Categorie
   div style="padding-left: 42%; text-align: center"
@@ -22,7 +11,7 @@
             a.nav-link.dropdown-toggle id="main-field-dropdown" data-submenu="" data-toggle="dropdown"
               i.fas.fa-list
               | &nbsp
-              | Catégories
+              = @category_name
             .dropdown-menu id="dropdown-toggle"
               - Category.where(parent_id: nil).each do |category|
                 .dropdown.dropright.dropdown-submenu
@@ -33,10 +22,30 @@
                       a.dropdown-item
                         = sub_category.name
                 .dropdown.dropright.dropdown-submenu id="dropdown-toggle"
-  = f.input :category_id, as: :hidden, input_html: {id: "category_id"}, error: false
-  = f.button :submit, "Créer votre annonce", class: "btn btn-info", disable_with: "Submitting..."
   br
+  p
+    | Titre
+  = f.input :title, label: false, error: false
+  br
+  p
+    | Prix
+  = f.input :price, label: false, error: false
+  br
+  p
+    | Description
+  = f.input :description, as: :text, label: false, error: false
+  br
+  p
+    | Photo de couverture
+  = f.file_field :cover_picture, label: false, error: false
+  = f.input :category_id, as: :hidden, input_html: {id: "category_id"}, error: false
+  br
+  = f.button :submit, "Mettre à jour", class: "btn btn-info", disable_with: "Submitting..."
   - if @offer_form.errors.any?
+    br
+    br
+    h4
+      | Erreur:
     - @offer_form.errors.full_messages.each do |message|
       p
         = message

@@ -1,0 +1,9 @@
+fr:
+  activemodel:
+    attributes:
+      offer_form:
+        price: "Le prix"
+        description: "La description"
+        category_id: "La categorie"
+        title: "Le titre"
+        cover_picture: "La photo"

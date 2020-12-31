@@ -10,6 +10,7 @@ html
   body
     #main-container
       = render "layouts/home/navbar"
+      = flash_messages
       = yield
       br style="line-height:100px;"
       = render "layouts/home/footer"

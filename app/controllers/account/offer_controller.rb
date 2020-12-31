@@ -5,14 +5,45 @@ class Account::OfferController < AccountController
     redirect_to root_path
   end
 
+  def show
+    @offer = Offer.find_by_id(params[:id])
+  end
+
   def new
+  end
+
+  def edit
+    @offer_form    = Offer.find_by_id(params[:id])
+    @category_name = Category.find_by_id(@offer_form.category_id).name
+  end
+
+  def update
+    @offer = Offer.find_by_id(params[:id])
+    @offer_form ||= @offer_form = OfferForm.new(@offer)
+    if form_validate
+      @offer_form.save
+      flash[:success] = 'Votre annonce a bien été mis à jour'
+      redirect_to account_offer_path(@offer_form.id)
+    else
+      flash[:error] = 'Erreur de validation'
+      render :edit
+    end
+  end
+
+  def destroy
+    offer = Offer.find_by_id(params[:id])
+    offer.destroy if offer.user_id == current_user.id
+    flash[:success] = 'Votre annonce a été supprimé'
+    redirect_to root_path
   end
 
   def create
     if form_validate
       @offer_form.save
-      redirect_to root_path
+      flash[:success] = 'Votre annonce a été créé'
+      redirect_to account_offer_path(@offer_form.id)
     else
+      flash[:error] = 'Erreur de validation'
       render :new
     end
   end
@@ -26,10 +57,11 @@ class Account::OfferController < AccountController
   end
 
   def offer_params
-    params.require(:offer).permit(:title, :price, :description, :category_id)
+    params.require(:offer).permit(:title, :price, :description, :category_id, :cover_picture)
   end
 
   def form_validate
     @offer_form.validate offer_params
   end
+
 end

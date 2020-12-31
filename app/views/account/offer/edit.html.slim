@@ -3,10 +3,10 @@
     .card-header
       ul.nav.nav-tabs.card-header-tabs
         li.nav-item
-          a.nav-link.active Création d'une annonce
+          a.nav-link.active Editer votre annonce
     .card-body
       - if user_signed_in?
-        = render "account/offer/partials/form"
+        = render "account/offer/partials/form_edit"
       - else
         h4
           | Bonjour !
@@ -15,3 +15,11 @@
         = link_to "Se connecter", new_user_session_path, class: "btn btn-warning"
         | &nbsp;
         = link_to "Inscription", new_user_registration_path, class: "btn btn-warning"
+  .row
+    .col-sm-6
+      .card-body
+        .cart-title
+          a.content
+            i.fas.fa-long-arrow-alt-left
+            | &nbsp
+            = link_to 'Retour', :back
