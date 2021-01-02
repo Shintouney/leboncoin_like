@@ -14,10 +14,12 @@ class Account::OfferController < AccountController
 
   def edit
     @offer_form    = Offer.find_by_id(params[:id])
+    authorize @offer_form
     @category_name = Category.find_by_id(@offer_form.category_id).name
   end
 
   def update
+    authorize @offer
     @offer_form ||= @offer_form = OfferForm.new(@offer)
     if form_validate
       @offer.update(offer_params_update)
