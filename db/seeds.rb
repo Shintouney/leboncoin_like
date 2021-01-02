@@ -1,3 +1,4 @@
+# Creating categories
 def add_subcategory name, array
 	cat = Category.find_by_name(name)
 	array.each do |item|
@@ -32,3 +33,9 @@ add_subcategory "Services", ["Prestations de services", "Billetterie", "Évènem
 add_subcategory "Maison", ["Ameublement", "Électroménager", "Arts de la table", "Décoration", "Linge de maison", "Bricolage", "Jardinage"]
 add_subcategory "Matérielle Professionelles", ["Matériel agricole", "Transport - Manutention", "BTP - Chantier gros-oeuvre", "Outillage - Matériaux 2nd-oeuvre", "Équipements industriels", "Restauration - Hôtellerie", "Fournitures de bureau", "Commerces & Marchés", "Matériel médical"]
 add_subcategory "Divers", ["Autres"]
+
+# Creating user
+user = User.new
+user.email = 'test@example.com'
+user.encrypted_password = '#$taawktljasktlw4aaglj'
+user.save!

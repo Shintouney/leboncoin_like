@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   root "home#index"
+  namespace :api do
+    namespace :v1 do
+      resources :offers
+    end
+  end
   resources :home, only: [:index]
   resources :category_offer
   namespace :account do
