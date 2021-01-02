@@ -9,6 +9,8 @@ Bundler.require(*Rails.groups)
 module Inc
   class Application < Rails::Application
     config.load_defaults 6.0
+    config.hosts << "vicopo.selfbuild.fr"
+    config.hosts << "selfbuild.fr"
     config.active_storage.replace_on_assign_to_many = false
     config.i18n.default_locale = :'fr'
     config.to_prepare do

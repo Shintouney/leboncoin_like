@@ -43,7 +43,13 @@
         | &nbsp
         i.fas.fa-map-marker
         | &nbsp
-        input.form-control aria-describedby="basic-addon1" aria-label="Username" placeholder="Saisissez une ville et un rayon" type="text"
+        input.form-control aria-describedby="basic-addon1" aria-label="Username" placeholder="Saisissez une ville" type="text"
+        input#ville placeholder=("Entrez un code postal ou une ville") /
+        ul
+          li data-vicopo="#ville"
+              strong data-vicopo-code-postal=""
+                  span data-vicopo-ville=""
+
       = simple_form_for :search, url: home_index_path do |f|
-        = f.hidden_field :category
+        = f.input :category_id, as: :hidden, input_html: {id: "category_id"}
         = f.button :submit, "Rechercher (#{Offer.all.count} résultats)", class: "btn btn-primary", id: "submit_button"

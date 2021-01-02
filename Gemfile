@@ -25,7 +25,7 @@ gem 'reform-rails'
 gem 'dry-validation'
 gem 'kaminari'
 gem 'kaminari-i18n'
-gem 'cities'
+gem 'rack-cors'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
