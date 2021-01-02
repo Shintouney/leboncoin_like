@@ -3,7 +3,7 @@ class Account::OfferController < AccountController
   before_action :load_offer, only: [:edit, :show, :update]
 
   def index
-    redirect_to root_path
+    @offers = policy_scope(Offer)
   end
 
   def show
