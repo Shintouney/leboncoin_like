@@ -13,7 +13,7 @@ default: &default
   template: template0
 test:
   <<: *default
-  database: leboncoin_like<%= ENV.fetch("TEST_ENV_NUMBER") {} %>
+  database: leboncoin_like_test<%= ENV.fetch("TEST_ENV_NUMBER") {} %>
 development:
   <<: *default
 staging:
