@@ -23,6 +23,8 @@ gem 'awesome_print'
 gem 'devise-i18n'
 gem 'reform-rails'
 gem 'dry-validation'
+gem 'kaminari'
+gem 'kaminari-i18n'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

@@ -3,7 +3,7 @@ class Account::OfferController < AccountController
   before_action :load_offer, only: [:edit, :show, :update]
 
   def index
-    @offers = policy_scope(Offer)
+    @offers = policy_scope(Offer).page(params[:page])
   end
 
   def show
@@ -35,7 +35,7 @@ class Account::OfferController < AccountController
     offer = Offer.find_by_id(params[:id])
     offer.destroy if offer.user_id == current_user.id
     flash[:success] = 'Votre annonce a été supprimé'
-    redirect_to root_path
+    redirect_to account_offer_index_path
   end
 
   def create

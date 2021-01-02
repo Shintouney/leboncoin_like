@@ -63,3 +63,11 @@
                 | &nbsp
                 = link_to 'Editer l\'annonce',
                   edit_account_offer_path(id: @offer.id)
+    .row
+      .col-sm-6
+        .card-body
+          .cart-title
+            a.content
+              i.fas.fa-long-arrow-alt-left
+              | &nbsp
+              = link_to 'Retour', :back
