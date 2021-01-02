@@ -13,6 +13,13 @@
       .card-body
         .card-title
           p.content
+            = link_to "Catégorie: #{@offer.category.name}", category_offer_path(@offer.category_id)
+          h6.card-subtitle.mb-2.text-muted
+            = "Annonce parue le #{l(@offer.created_at)}"
+    .card
+      .card-body
+        .card-title
+          p.content
             = "Titre: #{@offer.title}"
     br
     .card

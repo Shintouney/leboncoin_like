@@ -1,0 +1,46 @@
+.container
+  br
+  h4
+    = "Liste de vos annonces: #{@category&.name}"
+  - if @offers.empty?
+    .card style=("width: 58rem;")
+      .card-body
+        h5.card-title
+          | Catégorie non trouvé
+  - @offers.each do |offer|
+    .card style=("width: 58rem;")
+      = link_to image_tag(offer.cover_picture, style: "height:100px;width:600px"), account_offer_path(offer)
+      .card-body
+        h5.card-title
+          = "Categorie: #{offer.category.name}"
+        h5.card-title
+          = "Titre: #{offer.title}"
+        h6.card-subtitle.mb-2.text-muted
+          = "Prix: #{offer.price} €"
+        p.card-text
+          = offer.description
+        div
+          a.content
+            i.fas.fa-eye
+            | &nbsp
+            = link_to 'Voir l\'annonce',
+              account_offer_path(offer.id)
+          | &nbsp;
+          - if policy(offer).edit?
+            a.content
+              i.fas.fa-edit
+              | &nbsp
+              = link_to 'Editer l\'annonce',
+                edit_account_offer_path(id: offer.id)
+          | &nbsp;
+          - if policy(offer).edit?
+            a.content
+              i.fas.fa-trash-alt
+              | &nbsp
+              = link_to 'Supprimer l\'annonce',
+                account_offer_path(id: offer.id),
+                method: :delete,
+                data: { confirm: 'Etes vous sure?'  }
+    br
+  - unless @offers.empty?
+    = paginate @offers

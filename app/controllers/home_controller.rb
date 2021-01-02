@@ -6,10 +6,6 @@ class HomeController < ApplicationController
     @categories = Category.where(parent_id: nil)
   end
 
-  def create
-    raise
-  end
-
   private
 
   def determine_layout
