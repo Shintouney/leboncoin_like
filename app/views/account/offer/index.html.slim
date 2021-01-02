@@ -1,6 +1,11 @@
 .container
   br
   h4 Liste de vos annonces
+  - if @offers.empty?
+    .card style=("width: 58rem;")
+      .card-body
+        h5.card-title
+          | Vous n'avez aucune annonce
   - @offers.each do |offer|
     .card style=("width: 58rem;")
       = link_to image_tag(offer.cover_picture, style: "height:100px;width:600px"), account_offer_path(offer)

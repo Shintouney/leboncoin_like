@@ -41,7 +41,7 @@
                 = @offer.price
                 | &nbsp
                 | euros
-      - if policy(@offer).edit?
+      - if policy(@offer).show?
         .col-sm-6
           .card
             .card-body
@@ -53,7 +53,7 @@
                     account_offer_path(id: @offer.id),
                     method: :delete,
                     data: { confirm: 'Etes vous sure?'  }
-    - if policy(@offer).edit?
+    - if policy(@offer).show?
       .row
         .col-sm-6
           .card-body
