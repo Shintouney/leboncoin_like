@@ -12,6 +12,6 @@
           | Bonjour !
         p
           | Connectez-vous ou créez un compte pour déposer votre annonce
-        = link_to "Se connecter", new_user_session_path, class: "btn btn-warning"
+        = link_to "Se connecter", new_user_session_path, class: "btn btn-warning", id: "sign_in_link"
         | &nbsp;
         = link_to "Inscription", new_user_registration_path, class: "btn btn-warning"

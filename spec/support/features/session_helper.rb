@@ -8,5 +8,10 @@ module Features
 			click_on "connexion_log"
 		end
 
+		def only_sign_in(email, password)
+			fill_in "user_email", with: email
+			fill_in "user_password", with: password
+			click_on "connexion_log"
+		end
 	end
 end
