@@ -26,6 +26,7 @@ gem 'dry-validation'
 gem 'kaminari'
 gem 'kaminari-i18n'
 gem 'rack-cors'
+gem 'dotenv-rails'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

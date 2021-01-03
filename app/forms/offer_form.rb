@@ -6,6 +6,7 @@ class OfferForm < ReformForm
   property :user_id, validates: { presence: true }
   property :category_id, validates: { presence: true, allow_blank: false }
   property :cover_picture
+  property :location, validates: { presence: true, allow_blank: false }
 
   validates :cover_picture, presence: true, file_size: {less_than: 2.megabytes},
     file_content_type: {allow: ['image/jpeg', 'image/png', 'image/gif']}

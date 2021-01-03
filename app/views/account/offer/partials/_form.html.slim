@@ -36,6 +36,10 @@
   = f.input :description, as: :text, label: false, error: false
   br
   p
+    | Code Postal ou Ville
+  = f.input :location, label: false, error: false
+  p
+	br
     | Photo de couverture
   = f.file_field :cover_picture, label: false, error: false
   = f.input :category_id, as: :hidden, input_html: {id: "category_id"}, error: false
