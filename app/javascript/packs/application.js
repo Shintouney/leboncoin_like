@@ -7,7 +7,7 @@ require("channels")
 import "jquery-ui"
 window.jQuery = $;
 import "bootstrap-submenu";
-$( document  ).on('turbolinks:load', function() {
+$(document).on('turbolinks:load', function() {
   $('[data-submenu]').submenupicker();
   jQuery.noConflict()(function ($) {
     $(document).ready(function() {

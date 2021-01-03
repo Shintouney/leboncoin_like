@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     end
   end
   resources :home, only: [:index, :create]
-  resources :category_offer
+  resources :category_offer, only: [:index, :show]
   namespace :account do
     resources :profile, only: [:index]
     resources :offer
