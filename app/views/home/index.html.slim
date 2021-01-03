@@ -35,17 +35,19 @@
                         button.dropdown-item type="button"
                           = sub_category.name
                   .dropdown.dropright.dropdown-submenu id="dropdown-toggle"
-        .container
-        | &nbsp
-        | &nbsp
-        i.fas.fa-search
-        | &nbsp
-        input.form-control aria-describedby="basic-addon1" aria-label="Username" placeholder="Que recherchez-vous ?" type="text"
-        | &nbsp
-        i.fas.fa-map-marker
-        | &nbsp
-        input.form-control aria-describedby="basic-addon1" aria-label="Username" placeholder="Saisissez une ville" type="text"
+        .container id="search_data"
+          | &nbsp
+          | &nbsp
+          i.fas.fa-search
+          | &nbsp
+          input.form-control id="text_search_origin" aria-describedby="basic-addon1" aria-label="Username" placeholder="Que recherchez-vous ?" type="text"
+          | &nbsp
+          i.fas.fa-map-marker
+          | &nbsp
+          input.form-control id="location_search_origin" aria-describedby="basic-addon1" aria-label="Username" placeholder="Saisissez une ville" type="text"
 
       = simple_form_for :search, url: home_index_path do |f|
+        = f.input :text_search, as: :hidden, input_html: {id: "text_search"}
+        = f.input :location_search, as: :hidden, input_html: {id: "location_search"}
         = f.input :category_id, as: :hidden, input_html: {id: "category_id"}
         = f.button :submit, "Rechercher (#{Offer.all.count} résultats)", class: "btn btn-primary", id: "submit_button"
