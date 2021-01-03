@@ -16,6 +16,7 @@ module Inc
     config.hosts << ".selfbuild.fr"
     config.hosts << "selfbuild.fr"
     Dotenv::Railtie.load
+    config.autoload_paths += ["#{config.root}/app/queries/"]
     config.i18n.default_locale = :'fr'
     config.to_prepare do
       Devise::SessionsController.layout "home_unlogged"

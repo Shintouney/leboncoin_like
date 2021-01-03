@@ -5,7 +5,7 @@ Rails.application.routes.draw do
       resources :offers
     end
   end
-  resources :home, only: [:index]
+  resources :home, only: [:index, :create]
   resources :category_offer
   namespace :account do
     resources :profile, only: [:index]
