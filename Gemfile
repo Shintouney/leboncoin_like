@@ -43,6 +43,16 @@ group :development do
 end
 
 group :test do
+  gem 'rspec'
+  gem 'rspec-rails'
+  gem 'rspec-its'
+  gem 'rspec-core'
+  gem 'rspec-expectations'
+  gem 'rspec-mocks'
+  gem 'rspec-support'
+  gem 'fivemat'
+  gem 'shoulda-matchers'
+  gem 'factory_bot_rails', '< 5'
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
   gem 'webdrivers'
