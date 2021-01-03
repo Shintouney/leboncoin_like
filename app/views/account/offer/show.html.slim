@@ -35,6 +35,13 @@
             | Description
           p
             = @offer.description
+    .card
+      .card-body
+        .card-title
+          p.content
+            | Ville / Code postale:
+          p
+            = @offer.location
     .row
       .col-sm-6
         .card
