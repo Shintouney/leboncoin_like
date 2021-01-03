@@ -14,4 +14,3 @@ compte: email: test@example.com password: riveton
 # Feature non terminé
 - Envoie de message entre les membres
 - Ajout d'une offre à ses favoris
-Quelques test d'intégration ont été ajouté
