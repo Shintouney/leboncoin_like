@@ -11,7 +11,7 @@ compte: email: test@example.com password: riveton
 - Form object
 - Policies Object
 - Query Object
-Feature non terminé
+# Feature non terminé
 - Envoie de message entre les membres
 - Ajout d'une offre à ses favoris
 Quelque test d'intégration ont été ajouté
