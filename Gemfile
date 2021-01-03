@@ -25,7 +25,8 @@ gem 'reform-rails'
 gem 'dry-validation'
 gem 'kaminari'
 gem 'kaminari-i18n'
-gem 'rack-cors'
+gem 'rack-cors', '~> 1.0.5'
+gem 'rack-jsonp-middleware', require: 'rack/jsonp'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

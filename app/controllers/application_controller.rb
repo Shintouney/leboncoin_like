@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::Base
   include Pundit
-  protect_from_forgery with: :exception
   before_action :store_location
 
   def store_location

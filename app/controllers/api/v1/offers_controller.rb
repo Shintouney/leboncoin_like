@@ -2,7 +2,7 @@ module Api
   module V1
     class OffersController < ApplicationController
       def index
-        category     = Category.find_by_name(params[:category])
+        category = Category.find_by_name(params[:category])
         if category.nil?
           render json: { error: true, message: "Aucune categorie trouvé" }
           return false
