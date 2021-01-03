@@ -1,4 +1,5 @@
-class CategoryOfferController < AccountController
+class CategoryOfferController < ApplicationController
+  layout :determine_layout
   before_action :load_offers, only: [:show]
 
   def index
@@ -21,5 +22,9 @@ class CategoryOfferController < AccountController
 
   def search_params
     params.permit(:category, :location_search, :text_search)
+  end
+
+  def determine_layout
+    current_user.nil? ? "home_unlogged" : "home"
   end
 end

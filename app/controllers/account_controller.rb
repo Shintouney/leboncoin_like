@@ -6,7 +6,8 @@ class AccountController < ApplicationController
 
   def check_authentication
     redirect_to root_path unless current_user \
-      || controller_name == "offer"
+      || controller_name == "offer" \
+      || controller_name == "category_offer" && params[:action] == "index"
     if current_user.nil? && controller_name == "offer" && ["edit", "index"].include?(params[:action])
       flash[:error] = "vous n'avez rien à faire ici"
       redirect_to root_path
