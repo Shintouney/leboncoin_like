@@ -15,11 +15,11 @@
             .dropdown-menu id="dropdown-toggle"
               - Category.where(parent_id: nil).each do |category|
                 .dropdown.dropright.dropdown-submenu
-                  a.dropdown-item.dropdown-toggle
+                  a.dropdown-item.dropdown-toggle id="category_#{category.id}"
                     = category.name
                   .dropdown-menu
                     - category.subcategories.each do |sub_category|
-                      a.dropdown-item
+                      a.dropdown-item id="category_#{category.id}"
                         = sub_category.name
                 .dropdown.dropright.dropdown-submenu id="dropdown-toggle"
   br
@@ -44,7 +44,7 @@
   = f.file_field :cover_picture, label: false, error: false
   = f.input :category_id, as: :hidden, input_html: {id: "category_id"}, error: false
   br
-  = f.button :submit, "Créer votre annonce", class: "btn btn-info", disable_with: "Submitting..."
+  = f.button :submit, "Créer votre annonce", class: "btn btn-info", disable_with: "Submitting...", id: "submit_form"
   - if @offer_form.errors.any?
     br
     br

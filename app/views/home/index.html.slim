@@ -28,11 +28,11 @@
               .dropdown-menu id="dropdown-toggle"
                 - @categories.each do |category|
                   .dropdown.dropright.dropdown-submenu
-                    button.dropdown-item.dropdown-toggle
+                    button.dropdown-item.dropdown-toggle id="category_#{category.id}"
                       = category.name
                     .dropdown-menu
                       - category.subcategories.each do |sub_category|
-                        button.dropdown-item type="button"
+                        button.dropdown-item type="button" id="category_#{category.id}"
                           = sub_category.name
                   .dropdown.dropright.dropdown-submenu id="dropdown-toggle"
         .container id="search_data"

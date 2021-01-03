@@ -13,6 +13,7 @@ module Inc
     config.hosts << "localhost"
     config.hosts << "0.0.0.0"
     config.hosts << "www.example.com"
+    config.hosts << "127.0.0.1"
     Dotenv::Railtie.load
     config.autoload_paths += ["#{config.root}/app/queries/"]
     config.i18n.default_locale = :'fr'
