@@ -35,7 +35,21 @@ add_subcategory "Matérielle Professionelles", ["Matériel agricole", "Transport
 add_subcategory "Divers", ["Autres"]
 
 # Creating user
-user = User.new
-user.email = 'test@example.com'
-user.encrypted_password = '#$taawktljasktlw4aaglj'
+user                       = User.new
+user.email                 = 'test@example.com'
+user.password              = 'riveton'
+user.password_confirmation = 'riveton'
 user.save!
+
+Category.all.each do |category|
+  5.times do
+    offer = Offer.create \
+      title: Faker::Vehicle.make,
+      user_id: user.id,
+      description: Faker::Lorem.sentences(number: 1, supplemental: true),
+      category_id: category.id,
+      location: Faker::Address.city
+    offer.cover_picture.attach(io: File.open(Rails.root.join("app", "assets", "images", "default.jpg")), filename: 'default.jpg' , content_type: "image/jpg")
+    offer.save
+  end
+end
