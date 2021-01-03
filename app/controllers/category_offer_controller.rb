@@ -2,8 +2,7 @@ class CategoryOfferController < AccountController
   before_action :load_offers, only: [:show]
 
   def index
-    @offers = OrderedOffersSearchQuery.new(search_params).call
-    raise
+    @offers = OrderedOffersSearchQuery.new(search_params).call.page(params[:page])
   end
 
   def show
