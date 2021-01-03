@@ -10,11 +10,9 @@ module Inc
   class Application < Rails::Application
     config.load_defaults 6.0
     config.active_storage.replace_on_assign_to_many = false
-    config.hosts.clear
     config.hosts << "localhost"
     config.hosts << "0.0.0.0"
-    config.hosts << ".selfbuild.fr"
-    config.hosts << "selfbuild.fr"
+    config.hosts << "www.example.com"
     Dotenv::Railtie.load
     config.autoload_paths += ["#{config.root}/app/queries/"]
     config.i18n.default_locale = :'fr'

@@ -30,21 +30,21 @@ $(document).on('turbolinks:load', function() {
         original_array.push(array[0], "&nbsp;", event.target.innerText);
         document.getElementById("main-field-dropdown").innerHTML = original_array.join("");
         document.getElementById("category_id").value = event.target.innerText;
-				$.ajax({
-					url: "api/v1/offers",
-					type: "get",
-					data: {
-						category: event.target.innerText
-					},
-					success: function(response) {
-						const submit_button = document.getElementById("submit_button")
-						const count         = response.offers
-						submit_button.value = `Rechercher (${count} résultat)`
-					},
-					error: function(xhr) {
-						console.log("api error")
-					}
-				});
+        $.ajax({
+          url: "api/v1/offers",
+          type: "get",
+          data: {
+            category: event.target.innerText
+          },
+          success: function(response) {
+            const submit_button = document.getElementById("submit_button")
+            const count         = response.offers
+            submit_button.value = `Rechercher (${count} résultat)`
+          },
+          error: function(xhr) {
+            console.log("api error")
+          }
+        });
       });
     });
   });

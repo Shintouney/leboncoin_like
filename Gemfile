@@ -28,6 +28,9 @@ gem 'kaminari-i18n'
 gem 'rack-cors'
 gem 'dotenv-rails'
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+gem 'sidekiq'
+gem 'sidekiq-failures'
+gem 'paperclip'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -49,8 +52,10 @@ group :test do
   gem 'rspec-core'
   gem 'rspec-expectations'
   gem 'rspec-mocks'
+  gem 'webmock'
   gem 'rspec-support'
   gem 'fivemat'
+  gem 'database_cleaner'
   gem 'shoulda-matchers'
   gem 'factory_bot_rails', '< 5'
   gem 'capybara', '>= 2.15'
