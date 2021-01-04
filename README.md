@@ -14,3 +14,5 @@ compte: email: test@example.com password: riveton
 # Feature non terminé
 - Envoie de message entre les membres
 - Ajout d'une offre à ses favoris
+# J'ai ajouté quelque test avec rspec et capybara:webkit
+au cas ou https://github.com/thoughtbot/capybara-webkit/wiki/Installing-Qt-and-compiling-capybara-webkit
