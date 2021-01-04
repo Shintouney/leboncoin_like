@@ -27,9 +27,16 @@ feature "Offer creation", :devise do
     page.execute_script("document.getElementById('category_id').value = 'Voiture'")
     fill_in "offer_title", with: "Mon produit"
     fill_in "offer_price", with: "42"
-    fill_in "offer_description", with: "Basic descriptiol"
+    fill_in "offer_description", with: "Basic description"
     fill_in "offer_location", with: "42100"
+    attach_file('offer_cover_picture', "spec/files/default.jpg")
     click_on "submit_form"
+    sleep(2)
+    expect(Offer.all.size).to eq 1
+    expect(current_path).to eq "/account/offer/1"
+    expect(page.body).to have_content "Mon produit"
+    expect(page.body).to have_content "Basic description"
+    expect(page.body).to have_content "42100"
   end
 
 end
