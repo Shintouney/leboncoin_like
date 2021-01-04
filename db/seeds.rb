@@ -47,6 +47,7 @@ Category.all.each do |category|
       title: Faker::Vehicle.make,
       user_id: user.id,
       description: Faker::Lorem.sentences(number: 1, supplemental: true),
+      price: 42,
       category_id: category.id,
       location: Faker::Address.city
     offer.cover_picture.attach(io: File.open(Rails.root.join("app", "assets", "images", "default.jpg")), filename: 'default.jpg' , content_type: "image/jpg")
