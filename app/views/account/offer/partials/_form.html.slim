@@ -15,7 +15,7 @@
             .dropdown-menu id="dropdown-toggle"
               - Category.where(parent_id: nil).each do |category|
                 .dropdown.dropright.dropdown-submenu
-                  a.dropdown-item.dropdown-toggle id="category_#{category.id}"
+                  a.dropdown-item.dropdown-toggle id="old_category_#{category.id}"
                     = category.name
                   .dropdown-menu
                     - category.subcategories.each do |sub_category|
